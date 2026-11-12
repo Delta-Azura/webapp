@@ -1,0 +1,426 @@
+/* ==========================================================
+   Lycée Edgar Quinet — Maquette
+   Charte graphique reprise du site edgar-quinet.ent.auvergnerhonealpes.fr
+   ========================================================== */
+
+:root {
+  --blue: #0372b7;        /* bleu principal (liens, titres) */
+  --blue-dark: #015c9a;   /* bleu foncé (hover, footer) */
+  --blue-light: #e6f2fa;  /* fond bleu très clair */
+  --yellow: #fbd600;      /* jaune accent (boutons) */
+  --text: #333333;        /* texte principal */
+  --text-light: #666666;
+  --bg: #f6f6f6;          /* fond général */
+  --white: #ffffff;
+  --radius: 10px;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 24px rgba(3, 114, 183, 0.18);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--blue-dark);
+}
+
+/* ---------- Barre supérieure ---------- */
+.topbar {
+  background: var(--blue-dark);
+  color: var(--white);
+  font-size: 0.8rem;
+}
+
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background: var(--blue);
+  color: var(--white);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-text strong {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.brand-text small {
+  color: var(--text-light);
+  font-size: 0.78rem;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.main-nav a:hover {
+  background: var(--blue-light);
+  color: var(--blue-dark);
+}
+
+.main-nav a.active {
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* ---------- Hero (accueil) ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  color: var(--white);
+  padding: 70px 0 80px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.hero-text {
+  max-width: 680px;
+  margin: 0 auto 44px;
+  font-size: 1.05rem;
+  opacity: 0.92;
+}
+
+/* ---------- 3 gros boutons de profil ---------- */
+.profile-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.profile-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: var(--white);
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: 30px 20px;
+  box-shadow: var(--shadow);
+  border-bottom: 4px solid var(--yellow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.profile-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  color: var(--text);
+}
+
+.profile-icon {
+  font-size: 2rem;
+}
+
+.profile-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.profile-sub {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* ---------- Hero des pages internes ---------- */
+.page-hero {
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  color: var(--white);
+  padding: 48px 0;
+}
+
+.page-hero h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.page-hero p {
+  opacity: 0.92;
+  max-width: 680px;
+}
+
+/* ---------- Sections et cartes ---------- */
+.section {
+  padding: 48px 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--blue);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  color: var(--blue-dark);
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  flex: 1;
+}
+
+.card-link {
+  margin-top: 16px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ---------- Page contact ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.contact-form,
+.contact-info {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.contact-form h2,
+.contact-info h2 {
+  font-size: 1.15rem;
+  color: var(--blue-dark);
+  margin-bottom: 18px;
+}
+
+.contact-info h2 + p {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+.form-field label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-bottom: 6px;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  background: var(--white);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: 2px solid var(--blue);
+  outline-offset: 1px;
+  border-color: var(--blue);
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--blue-dark);
+  color: var(--white);
+  margin-top: 24px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding-top: 40px;
+  padding-bottom: 32px;
+}
+
+.site-footer h3 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: var(--yellow);
+}
+
+.site-footer p {
+  font-size: 0.88rem;
+  opacity: 0.9;
+}
+
+.site-footer ul {
+  list-style: none;
+}
+
+.site-footer li {
+  margin-bottom: 6px;
+}
+
+.site-footer a {
+  color: var(--white);
+  font-size: 0.88rem;
+  opacity: 0.9;
+}
+
+.site-footer a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 0;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .profile-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
